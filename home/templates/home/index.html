@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block start %}    
+    <a href="/contact-page">
+        Contact
+    </a>
+
+    <a href="/success-page">
+        success
+    </a>
+
+    <a href="/logout-page">
+      Logout
+  </a>
+
+    <h1>Hey Welcome to my First page</h1>
+
+    <hr>
+    
+    <table>
+        <tr>
+          <th>Sr. No</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Can Vote</th>
+        </tr>
+        {% for people in peoples %}
+
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{people.name}}</td>
+          <td>{{people.Age}}</td>
+          <td>
+            {% if people.Age > 18 %}
+            can vote
+            {% else %}
+            cannot Vote
+            {% endif %}
+        </td>
+        </tr>
+
+        {% endfor %}
+      </table>
+
+{% endblock %}
