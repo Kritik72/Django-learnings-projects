@@ -22,6 +22,10 @@ def resumes(request):
         return redirect('/resume')
         
     queryset = Resume.objects.all()
+
+    if request.GET.get('search'):
+        queryset = queryset.filter(f_name__icontains = request.GET.get('search'))
+
     context = {'resume' : queryset}
 
     return render(request, 'resume.html', context)
@@ -29,8 +33,8 @@ def resumes(request):
 def delete_resume(request,id):
     queryset = Resume.objects.get(id = id)
 
-    queryset.delete()   
-    return render('/resume')
+    queryset.delete()  
+    return redirect('/resume')
 
 def update_resume(request,id):
     queryset = Resume.objects.get(id = id)
