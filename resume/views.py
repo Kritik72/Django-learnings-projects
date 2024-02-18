@@ -23,6 +23,7 @@ def resumes(request):
         
         return redirect('/resume')
         
+        
     queryset = Resume.objects.all()
 
     if request.GET.get('search'):
@@ -69,7 +70,7 @@ def login_page(request):
         password = request.POST.get('password')
 
         if not User.objects.filter(username = username).exists():
-            messages.info(request, "Invalid Username")
+            messages.info(request, "Invalid Username Or user does not exists.")
             return render(request, 'login.html')
         
         user = authenticate(username = username, password = password)
@@ -80,7 +81,8 @@ def login_page(request):
         
         else:
             login(request, user)
-            return render(request, 'resume.html')
+            # return render(request, 'resume.html')
+            return redirect('resume')
     
 
     return render(request, 'login.html')
@@ -88,7 +90,7 @@ def login_page(request):
 
 def logout_page(request):
     logout(request)
-    return render(request, 'logout.html')
+    return render(request, 'login.html')
 
 
 def register_page(request):

@@ -4,7 +4,7 @@ from home.views import *
 from resume.views import *
 
 urlpatterns = [
-    path('home-page' , home , name = "home"),
+    path('home-page' , home_page, name='home_page'),
     path('success-page', success_page, name='success_page'),
     path('resume', resumes, name='resume'),
     path('delete-resume/<id>/', delete_resume, name='delete_resume'),

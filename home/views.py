@@ -1,19 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-def home(request):
 
-    peoples = [
-        {'name' : 'Kritik vaishnav' , 'Age' : 20},
-        {'name' : 'Rohan sharma' , 'Age' : 29},
-        {'name' : 'Rahul Guptatik' , 'Age' : 12},
-        {'name' : 'Abhishek Veeramalla' , 'Age' : 30},
-        {'name' : 'Durgesh Classes' , 'Age' : 15}
-    ]
-
-    return render(request, 'home\index.html', context = {'peoples':peoples , 
-                                                         'page': 'First Django Page'})    
-
+def home_page(request):
+    context = {'page' : 'Index'}
+    return render(request, 'home\index.html',context)  
+    
 def success_page(request):
     context = {'page' : 'Success'}
     return render(request, 'home\success.html', context)
