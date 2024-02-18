@@ -4,7 +4,9 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/login')
 def resumes(request):
 
     if request.method == 'POST':
@@ -62,6 +64,7 @@ def update_resume(request,id):
         
     context = {'resume': queryset}  
     return render(request, 'update.html',context)
+
 
 
 def login_page(request):
