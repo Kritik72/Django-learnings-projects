@@ -30,7 +30,7 @@ class Student(models.Model):
     department = models.ForeignKey(Department, related_name='depart', on_delete = models.CASCADE)
     student_id = models.OneToOneField(StudentID, related_name = 'studentid', on_delete= models.CASCADE)
     student_name = models.CharField(max_length = 100)
-    student_email = models.EmailField(name='unique')
+    student_email = models.EmailField()
     student_age = models.IntegerField(default=18)
     student_address = models.TextField()
 
