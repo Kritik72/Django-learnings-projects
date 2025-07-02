@@ -26,4 +26,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: kritik78/my-pyapp-k8s-version:{{ github.sha }}
+        tags: kritik78/my-pyapp-k8s-version:${{ github.sha }}
