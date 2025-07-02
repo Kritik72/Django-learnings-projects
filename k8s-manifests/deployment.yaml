@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-pyapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-pyapp
+  template:
+    metadata:
+      labels:
+        app: my-pyapp
+    spec:
+      containers:
+      - name: django
+        image: kritik78/my-pyapp-k8s-version:latest
+        resources:
+          limits:
+            memory: "250i"
+            cpu: "500m"
+          requests:
+            memory: "100i"
+            cpu: "250m"
+        ports:
+        - containerPort: 8000
