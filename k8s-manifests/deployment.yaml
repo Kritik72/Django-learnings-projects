@@ -17,10 +17,10 @@ spec:
         image: kritik78/my-pyapp-k8s-version:latest
         resources:
           limits:
-            memory: "250i"
+            memory: "250Mi"
             cpu: "500m"
           requests:
-            memory: "100i"
+            memory: "100Mi"
             cpu: "250m"
         ports:
         - containerPort: 8000
