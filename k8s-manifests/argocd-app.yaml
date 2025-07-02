@@ -9,10 +9,10 @@ spec:
     namespace: default 
   source: 
     repoURL: https://github.com/Kritik72/Django-learnings-projects
-    targetRevision: HEAD
-    path: k8s
+    targetRevision: main
+    path: k8s-manifests
   project: default
-  syncpolicy: 
-    automated: 
-    selfHeal: true 
-    prune: true
+  syncPolicy:
+    automated:
+      prune: true 
+      selfHeal: true
