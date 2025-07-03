@@ -30,7 +30,7 @@ jobs:
         context: .
         platforms: linux/amd64
         push: true
-        tags: kritik78/my-pyapp-k8s-version:latest
+        tags: kritik78/my-pyapp-k8s-version:${{ github.sha }}
 
     - name: Update deployment YAML with new image tag
       run: |
