@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: django
-        image: kritik78/my-pyapp-k8s-version:latest
+        image: kritik78/my-pyapp-k8s-version:TAG_TO_BE_REPLACED
         resources:
           limits:
             memory: "250Mi"
