@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: django
-        image: kritik78/my-pyapp-k8s-version:REPLACEME_TAG
+        image: kritik78/my-pyapp-k8s-version:9396a2a2449cc8c26e15b1beb58834dba63b48b9
         imagePullPolicy: Always
         resources:
           limits:
