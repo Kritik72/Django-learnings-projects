@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: django
-        image: kritik78/my-pyapp-k8s-version:latest
+        image: kritik78/my-pyapp-k8s-version:latest-02d0ed3
         imagePullPolicy: Always
         resources:
           limits:
