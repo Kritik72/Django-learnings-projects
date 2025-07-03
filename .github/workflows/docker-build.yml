@@ -31,3 +31,15 @@ jobs:
         platforms: linux/amd64
         push: true
         tags: kritik78/my-pyapp-k8s-version:latest
+
+    - name: Update deployment YAML with new image tag
+      run: |
+        sed -i "s|REPLACEME_TAG|${{ github.sha }}|g" k8s-manifests/deployment.yaml
+
+    - name: Commit updated manifest
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add k8s-manifests/deployment.yaml
+        git commit -m "Update deployment image to ${{ github.sha }}"
+        git push
